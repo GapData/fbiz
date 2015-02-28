@@ -1,0 +1,309 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: fBiz Theme\n"
+"POT-Creation-Date: 2015-02-23 21:45+0200\n"
+"PO-Revision-Date: 2015-02-23 21:45+0200\n"
+"Last-Translator: \n"
+"Language-Team: tishonator <info@tishonator.com>\n"
+"Language: English\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: /home/tishonator/tishonator.com/themes/free_themes/"
+"fbiz\n"
+
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/content-none.php:18
+msgid "Oh no! Article not found! 404 error!"
+msgstr ""
+
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/content-none.php:22
+msgid "No Results Found!"
+msgstr ""
+
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/content-none.php:27
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/search.php:21
+#, php-format
+msgid "You searched for \"%s\". Here are the results:"
+msgstr ""
+
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/sidebar-home.php:27
+msgid "Home Col Widget 1"
+msgstr ""
+
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/sidebar-home.php:34
+msgid ""
+"This is first homepage widget area. To customize it, please navigate to "
+"Admin Panel -> Appearance -> Widgets and add widgets to Homepage Column #1."
+msgstr ""
+
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/sidebar-home.php:51
+msgid "Home Col Widget 2"
+msgstr ""
+
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/sidebar-home.php:58
+msgid ""
+"This is second homepage widget area. To customize it, please navigate to "
+"Admin Panel -> Appearance -> Widgets and add widgets to Homepage Column #2."
+msgstr ""
+
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/sidebar-home.php:76
+msgid "Home Col Widget 3"
+msgstr ""
+
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/sidebar-home.php:83
+msgid ""
+"This is third homepage widget area. To customize it, please navigate to "
+"Admin Panel -> Appearance -> Widgets and add widgets to Homepage Column #3."
+msgstr ""
+
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/footer.php:26
+msgid "fBiz Theme"
+msgstr ""
+
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/footer.php:27
+msgid "WordPress"
+msgstr ""
+
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/comments.php:54
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/content-page.php:30
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/content.php:62
+msgid "Comments are closed."
+msgstr ""
+
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/single.php:37
+msgid "Pages:"
+msgstr ""
+
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/searchform.php:20
+msgid "Search..."
+msgstr ""
+
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/content-page.php:30
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/content.php:62
+msgid "No Comments"
+msgstr ""
+
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/content-page.php:30
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/content.php:62
+msgid "1 Comment"
+msgstr ""
+
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/content-page.php:30
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/content.php:62
+msgid "% Comments"
+msgstr ""
+
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/content-page.php:35
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/content.php:67
+msgid "Edit"
+msgstr ""
+
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/functions.php:49
+msgid "primary menu"
+msgstr ""
+
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/functions.php:182
+msgid "Sidebar Widget Area"
+msgstr ""
+
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/functions.php:184
+msgid "The sidebar widget area"
+msgstr ""
+
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/functions.php:198
+#, php-format
+msgid "Homepage Column #%s"
+msgstr ""
+
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/functions.php:200
+#, php-format
+msgid "The Homepage Column #%s widget area"
+msgstr ""
+
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/functions.php:232
+#, php-format
+msgid "%s - Page %s"
+msgstr ""
+
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/functions.php:238
+msgid "Error 404: Not Found"
+msgstr ""
+
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/functions.php:330
+msgid "First"
+msgstr ""
+
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/functions.php:349
+msgid "Last"
+msgstr ""
+
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/functions.php:356
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/functions.php:376
+msgid "Read More"
+msgstr ""
+
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/functions.php:389
+msgid "Read More..."
+msgstr ""
+
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/content.php:92
+msgid "Categories:"
+msgstr ""
+
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/content.php:101
+msgid "Tags:"
+msgstr ""
+
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/taxonomy-post_format.php:31
+msgid "Asides"
+msgstr ""
+
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/taxonomy-post_format.php:34
+msgid "Images"
+msgstr ""
+
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/taxonomy-post_format.php:37
+msgid "Videos"
+msgstr ""
+
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/taxonomy-post_format.php:40
+msgid "Audio"
+msgstr ""
+
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/taxonomy-post_format.php:43
+msgid "Quotes"
+msgstr ""
+
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/taxonomy-post_format.php:46
+msgid "Links"
+msgstr ""
+
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/taxonomy-post_format.php:49
+msgid "Galleries"
+msgstr ""
+
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/taxonomy-post_format.php:52
+msgid "Archives"
+msgstr ""
+
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/inc/admin-options.php:15
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/inc/admin-options.php:57
+msgid "Theme Options"
+msgstr ""
+
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/inc/admin-options.php:33
+msgid ""
+"<h2>Lorem ipsum dolor</h2><p>Lorem ipsum dolor sit amet, consectetur "
+"adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna "
+"aliqua.</p><a class=\"btn\" title=\"Read more\" href=\"#\">Read more</a>"
+msgstr ""
+
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/inc/admin-options.php:35
+msgid ""
+"<h2>Everti Constituam</h2><p>Ut enim ad minim veniam, quis nostrud "
+"exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><a "
+"class=\"btn\" title=\"Read more\" href=\"#\">Read more</a>"
+msgstr ""
+
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/inc/admin-options.php:37
+msgid ""
+"<h2>Id Essent Cetero</h2><p>Quodsi docendi sed id. Ea eam quod aliquam "
+"epicurei, qui tollit inimicus partiendo cu ei. Nisl consul expetendis at "
+"duo, mea ea ceteros constituam.</p><a class=\"btn\" title=\"Read more\" href="
+"\"#\">Read more</a>"
+msgstr ""
+
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/inc/admin-options.php:60
+msgid ""
+"The fBiz theme is a free version of the profession and multi-purpose theme "
+"tBiz."
+msgstr ""
+
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/inc/admin-options.php:60
+msgid "Click Here"
+msgstr ""
+
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/inc/admin-options.php:60
+msgid "to learn more about tBiz theme."
+msgstr ""
+
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/inc/admin-options.php:65
+msgid "Theme settings updated successfully."
+msgstr ""
+
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/inc/admin-options.php:77
+msgid "Save Changes"
+msgstr ""
+
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/inc/admin-options.php:77
+msgid "Upgrade to tBiz Theme"
+msgstr ""
+
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/inc/admin-options.php:88
+msgid "Settings"
+msgstr ""
+
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/inc/admin-options.php:97
+msgid "Upload a custom logo for your website."
+msgstr ""
+
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/inc/admin-options.php:103
+msgid "Logo image"
+msgstr ""
+
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/inc/admin-options.php:112
+msgid "Your Copyright text to appear in the website footer"
+msgstr ""
+
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/inc/admin-options.php:118
+msgid "Copyright Text"
+msgstr ""
+
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/inc/admin-options.php:127
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/inc/admin-options.php:157
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/inc/admin-options.php:187
+#, php-format
+msgid "Slide #%s content in the slider"
+msgstr ""
+
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/inc/admin-options.php:133
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/inc/admin-options.php:163
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/inc/admin-options.php:193
+#, php-format
+msgid "Slide #%s Content"
+msgstr ""
+
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/inc/admin-options.php:142
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/inc/admin-options.php:172
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/inc/admin-options.php:202
+#, php-format
+msgid "Upload a custom Slide #%s Background image for the slider."
+msgstr ""
+
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/inc/admin-options.php:148
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/inc/admin-options.php:178
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/inc/admin-options.php:208
+#, php-format
+msgid "Slide #%s Background Image"
+msgstr ""
+
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/inc/admin-options.php:258
+msgid "Upload"
+msgstr ""
+
+#: /home/tishonator/tishonator.com/themes/free_themes/fbiz/inc/admin-options.php:280
+msgid "Upload an image"
+msgstr ""
