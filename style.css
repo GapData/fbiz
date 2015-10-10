@@ -1,10 +1,10 @@
 /*
 Theme Name: fBiz
-Description: fBiz is a clean, 100% responsive and easy to use WordPress theme suitable for a corporate, business, startup, a company website or a blog. It is fully responsive, built-in slider included, multi-level drop-down menu, W3C markup validated, right sidebar widget area, 3 homepage columns widget areas, admin panel options, search engine optimized, cross-browser compatible (IE9, IE10, IE11, Chrome, Firefox, Opera, and Safari), FontAwesome integration, translation ready and much more.
-Theme URI: http://tishonator.com/product/fbiz
+Description: fBiz is a clean, 100% responsive and easy to use WordPress theme suitable for a corporate, business, startup, a company website or a blog. It is fully responsive, built-in slider included, multi-level drop-down menu, W3C markup validated, right sidebar widget area, 3 homepage columns widget areas, customize options, search engine optimized, cross-browser compatible (IE9, IE10, IE11, Chrome, Firefox, Opera, and Safari), FontAwesome integration, translation ready and much more.
+Theme URI: https://tishonator.com/product/fbiz
 Author: tishonator
-Author URI: http://tishonator.com
-Version: 1.0.0
+Author URI: https://tishonator.com
+Version: 1.0.1
 Text Domain: fbiz
 Tags: red, white, brown, gray, light, two-columns, right-sidebar, fixed-layout, fluid-layout, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, featured-images, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
 License: GNU General Public License v2.0
@@ -1482,6 +1482,34 @@ blockquote {
 
 #content .page-title {
 	display:none !important;
+}
+
+.screen-reader-text {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}
+
+.screen-reader-text:focus {
+    background-color: #f1f1f1;
+    border-radius: 3px;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+    clip: auto !important;
+    color: #21759b;
+    display: block;
+    font-size: 14px;
+    font-size: 0.875rem;
+    font-weight: bold;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000; /* Above WP toolbar. */
 }
 
 /* Responsive Web Design */

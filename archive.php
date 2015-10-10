@@ -40,7 +40,7 @@
 				?>
 				<div class="navigation">
 
-					<?php fbiz_show_pagenavi(); ?>
+					<?php echo paginate_links( array( 'prev_next' => '', ) ); ?>
 
 				</div><!-- .navigation --> 
 		<?php else :

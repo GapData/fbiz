@@ -15,7 +15,7 @@ fBiz is a clean, 100% responsive and easy to use WordPress theme
 suitable for a corporate, business, startup, a company website or a blog. 
 It is fully responsive, built-in slider included, multi-level drop-down menu,
 W3C markup validated, right sidebar widget area, 3 homepage columns widget areas,
-admin panel options, search engine optimized, cross-browser compatible (IE9, IE10,
+customize options, search engine optimized, cross-browser compatible (IE9, IE10,
 IE11, Chrome, Firefox, Opera, and Safari), FontAwesome integration, translation ready
 and much more.
 
@@ -60,5 +60,5 @@ The exceptions to this license are as follows:
 
 == Contacts ==
 
-Author Website: http://tishonator.com
+Author Website: https://tishonator.com
 

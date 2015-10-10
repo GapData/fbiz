@@ -18,9 +18,7 @@
 	
 	<div class="page-after-content">
 	
-		<span class="author-icon">
-			<?php the_author_posts_link(); ?>
-		</span><!-- .author-icon -->
+		<!-- .author-icon -->
 		
 		<?php if ( ! post_password_required() ) : ?>
 

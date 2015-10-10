@@ -22,7 +22,7 @@
 					<div id="copyright">
 					
 						<p>
-						 	<?php fbiz_show_copyright_text(); ?> <a href="<?php echo esc_url( 'http://tishonator.com/product/fbiz' ); ?>" title="<?php esc_attr_e( 'fbiz Theme', 'fbiz' ); ?>">
+						 	<?php fbiz_show_copyright_text(); ?> <a href="<?php echo esc_url( 'https://tishonator.com/product/fbiz' ); ?>" title="<?php esc_attr_e( 'fbiz Theme', 'fbiz' ); ?>">
 							<?php _e('fBiz Theme', 'fbiz'); ?></a> <?php esc_attr_e( 'powered by', 'fbiz' ); ?> <a href="<?php echo esc_url( 'http://wordpress.org/' ); ?>" title="<?php esc_attr_e( 'WordPress', 'fbiz' ); ?>">
 							<?php _e('WordPress', 'fbiz'); ?></a>
 						</p>

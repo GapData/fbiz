@@ -27,8 +27,6 @@
  *
  */
 
-require get_template_directory() . '/inc/admin-options.php';
-
 if ( ! function_exists( 'fbiz_setup' ) ) :
 /**
  * fBiz setup.
@@ -110,15 +108,6 @@ function fbiz_setup() {
 endif; // fbiz_setup
 add_action( 'after_setup_theme', 'fbiz_setup' );
 
-function fbiz_post_classes( $classes ) {
-	if ( ! post_password_required() && ! is_attachment() && has_post_thumbnail() ) {
-		$classes[] = 'has-post-thumbnail';
-	}
-
-	return $classes;
-}
-add_filter( 'post_class', 'fbiz_post_classes' );
-
 /**
  * the main function to load scripts in the fBiz theme
  * if you add a new load of script, style, etc. you can use that function
@@ -132,9 +121,9 @@ function fbiz_load_scripts() {
 	wp_enqueue_style( 'fbiz-fonts', fbiz_fonts_url(), array(), null );
 	
 	// Load thread comments reply script
-	if ( is_singular() ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+        wp_enqueue_script( 'comment-reply' );
+    }
 	
 	// Load Utilities JS Script
 	wp_enqueue_script( 'fbiz-utilities-js', get_template_directory_uri() . '/js/utilities.js', array( 'jquery' ) );
@@ -211,10 +200,11 @@ function fbiz_widgets_init() {
  */
 function fbiz_show_copyright_text() {
 	
-	$options = fbiz_get_options();
-	if ( array_key_exists( 'footer_copyrighttext', $options ) && $options[ 'footer_copyrighttext' ] != '' ) {
+	$footerText = get_theme_mod('fbiz_footer_copyright', null);
 
-		echo esc_html( $options[ 'footer_copyrighttext' ] ) . ' | ';
+	if ( !empty( $footerText ) ) {
+
+		echo esc_html( $footerText ) . ' | ';		
 	}
 }
 
@@ -266,8 +256,6 @@ function fbiz_show_page_header_section() {
  */
 function fbiz_show_website_logo_image_or_title() {
 
-	$options = fbiz_get_options();
-
 	if ( get_header_image() != '' ) {
 	
 		// Check if the user selected a header Image in the Customizer or the Header Menu
@@ -276,21 +264,10 @@ function fbiz_show_website_logo_image_or_title() {
 		$imageWidth = get_custom_header()->width;
 		$imageHeight = get_custom_header()->height;
 		
-		echo '<a href="'.home_url('/').'" title="'.get_bloginfo('name').'">';
+		echo '<a href="' . esc_url( home_url('/') ) . '" title="' . esc_attr( get_bloginfo('name') ) . '">';
 		
-		echo "<img src='$logoImgPath' alt='$siteTitle' title='$siteTitle' width='$imageWidth' height='$imageHeight' alt='' />";
+		echo '<img src="' . esc_attr( $logoImgPath ) . '" alt="' . esc_attr( $siteTitle ) . '" title="' . esc_attr( $siteTitle ) . '" width="' . esc_attr( $imageWidth ) . '" height="' . esc_attr( $imageHeight ) . '" />';
 		
-		echo '</a>';
-
-	} else if ( array_key_exists( 'header_logo', $options ) && $options[ 'header_logo' ] != '' ) {
-		 
-		echo '<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo('name') ) . '">';
-		
-		$logoImgPath = $options[ 'header_logo' ];
-		$siteTitle = get_bloginfo( 'name' );
-		
-		echo "<img src='" . esc_attr( $logoImgPath ) . "' alt='" . esc_attr( $siteTitle ) . "' title='" . esc_attr( $siteTitle ) . "' />";
-	
 		echo '</a>';
 
 	} else {
@@ -303,60 +280,6 @@ function fbiz_show_website_logo_image_or_title() {
 		
 		echo '<strong>'.get_bloginfo('description').'</strong>';
 	}
-}
-
-/**
- *	Displays the page navigation
- */
-function fbiz_show_pagenavi( $p = 2 ) { // pages will be show before and after current page
-
-	if ( is_singular() ) {
-		return; // do NOT show in single page
-	}
-  
-	global $wp_query, $paged;
-	$max_page = $wp_query->max_num_pages;
-	
-	if ( $max_page == 1 ) {
-		return; // don't show when only one page
-	}
-  
-	if ( empty( $paged ) ) {
-		$paged = 1;
-	}
-  
-	// pages
-	if ( $paged > $p + 1 ) {
-		fbiz_p_link( 1, __('First', 'fbiz') );
-	}
-  
-	if ( $paged > $p + 2 ) {
-		echo '... ';
-	}
-  
-	for ( $i = $paged - $p; $i <= $paged + $p; ++$i ) { 
-		// Middle pages
-		if ( $i > 0 && $i <= $max_page ) {
-			$i == $paged ? print "<span class='page-numbers current'>{$i}</span> " : fbiz_p_link($i);
-		}
-	}
-  
-	if ( $paged < $max_page - $p - 1 ) {
-		echo '... ';
-	}
-  
-	if ( $paged < $max_page - $p ) {
-		fbiz_p_link( $max_page, __('Last', 'fbiz') );
-	}
-}
-
-function fbiz_p_link( $i, $title = '' ) {
-
-	if ( $title == '' ) {
-		$title = sprintf( __('Page %s', 'fbiz'), $i );
-	}
-	
-	echo "<a class='page-numbers' href='", esc_url( get_pagenum_link( $i ) ), "' title='", esc_attr($title), "'>{$i}</a>";
 }
 
 /**
@@ -393,35 +316,7 @@ function fbiz_the_content_single() {
  * Displays the slider
  */
 function fbiz_display_slider() {
-	/**
-	 *	Get options
-	 */
-	$options = fbiz_get_options();
-	if ($options === false) {
-		return;
-	}
-	
-	/**
-	 * Check if we need to display slider: there should be
-	 * at least one slider with background image and content
-	 */
-	$skipSliderDisplay = true;
-	for ( $i = 1; $i <= 3; ++$i ) {
-	 
-		$sliderContentKey = 'slider_slide'.$i.'_content';
-		$slideImageKey = 'slider_slide'.$i.'_image';
-			
-		if ( array_key_exists( $sliderContentKey, $options ) && $options[ $sliderContentKey ] != ''
-			&& array_key_exists( $slideImageKey, $options ) && $options[ $slideImageKey ] != '' ) {
-				
-			$skipSliderDisplay = false;
-			break;
-		}
-	}
-	 
-	if ($skipSliderDisplay) {
-		return;
-	}
+
 ?>
 	
 	<div class="slider">
@@ -431,35 +326,158 @@ function fbiz_display_slider() {
 		<?php
 			// display slides
 			for ( $i = 1; $i <= 3; ++$i ) {
-			
-				$sliderContentKey = 'slider_slide'.$i.'_content';
-				$slideImageKey = 'slider_slide'.$i.'_image';
-				
-				if ( array_key_exists( $sliderContentKey, $options ) && $options[ $sliderContentKey ] != ''
-					&& array_key_exists( $slideImageKey, $options ) && $options[ $slideImageKey ] != '' ) {
 
-						$slideContent = $options[ $sliderContentKey ];
-						$slideImage = $options[ $slideImageKey ];
+				$defaultSlideContent = __( '<h2>Lorem ipsum dolor</h2><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><a class="btn" title="Read more" href="#">Read more</a>', 'fbiz' );
+					
+				$defaultSlideImage = get_template_directory_uri().'/img/' . $i .'.jpg';
+
+				$slideContent = get_theme_mod( 'fbiz_slide'.$i.'_content', html_entity_decode( $defaultSlideContent ) );
+				$slideImage = get_theme_mod( 'fbiz_slide'.$i.'_image', $defaultSlideImage );
+
 ?>					
-						<li <?php if ( $slideImage != '' ) : ?>
+				<li <?php if ( $slideImage != '' ) : ?>
 
-									style="background-image: url('<?php echo $slideImage; ?>');"
+							style="background-image: url('<?php echo $slideImage; ?>');"
 
-							<?php endif; ?>>
-							<div class="slider-content-wrapper">
-								<div class="slider-content-container">
-									<div class="slide-content">
-										<?php echo $slideContent; ?>
-									</div>
-								</div>
+					<?php endif; ?>>
+					<div class="slider-content-wrapper">
+						<div class="slider-content-container">
+							<div class="slide-content">
+								<?php echo $slideContent; ?>
 							</div>
-						</li>				
+						</div>
+					</div>
+				</li>				
 <?php
-					}
 			} ?>
 		</ul>
 	</div>
 <?php 
 }
+
+/**
+ * Gets additional theme settings description
+ */
+function fbiz_get_customizer_sectoin_info() {
+
+	$premiumThemeUrl = 'https://tishonator.com/product/tbiz';
+
+	return sprintf( __( 'The fBiz theme is a free version of the professional WordPress theme tBiz. <a href="%s" class="button-primary" target="_blank">Get tBiz Theme</a><br />', 'fbiz' ), $premiumThemeUrl );
+}
+
+/**
+ * Register theme settings in the customizer
+ */
+function fbiz_customize_register( $wp_customize ) {
+
+	// Header Image Section
+	$wp_customize->add_section( 'header_image', array(
+		'title' => __( 'Header Image', 'fbiz' ),
+		'description' => fbiz_get_customizer_sectoin_info(),
+		'theme_supports' => 'custom-header',
+		'priority' => 60,
+	) );
+
+	// Colors Section
+	$wp_customize->add_section( 'colors', array(
+		'title' => __( 'Colors', 'fbiz' ),
+		'description' => fbiz_get_customizer_sectoin_info(),
+		'priority' => 50,
+	) );
+
+	// Background Image Section
+	$wp_customize->add_section( 'background_image', array(
+			'title' => __( 'Background Image', 'fbiz' ),
+			'description' => fbiz_get_customizer_sectoin_info(),
+			'priority' => 70,
+		) );
+
+	/**
+	 * Add Slider Section
+	 */
+	$wp_customize->add_section(
+		'fbiz_slider_section',
+		array(
+			'title'       => __( 'Slider', 'fbiz' ),
+			'capability'  => 'edit_theme_options',
+			'description' => fbiz_get_customizer_sectoin_info(),
+		)
+	);
+	
+	for ($i = 1; $i <= 3; ++$i) {
+	
+		$slideContentId = 'fbiz_slide'.$i.'_content';
+		$slideImageId = 'fbiz_slide'.$i.'_image';
+		$defaultSliderImagePath = get_template_directory_uri().'/img/'.$i.'.jpg';
+	
+		// Add Slide Content
+		$wp_customize->add_setting(
+			$slideContentId,
+			array(
+				'default'           => __( '<h2>Lorem ipsum dolor</h2><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><a class="btn" title="Read more" href="#">Read more</a>', 'fbiz' ),
+				'sanitize_callback' => 'force_balance_tags',
+			)
+		);
+		
+		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, $slideContentId,
+									array(
+										'label'          => sprintf( __( 'Slide #%s Content', 'fbiz' ), $i ),
+										'section'        => 'fbiz_slider_section',
+										'settings'       => $slideContentId,
+										'type'           => 'textarea',
+										)
+									)
+		);
+		
+		// Add Slide Background Image
+		$wp_customize->add_setting( $slideImageId,
+			array(
+				'default' => $defaultSliderImagePath,
+				'sanitize_callback' => 'esc_url_raw'
+			)
+		);
+
+		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, $slideImageId,
+				array(
+					'label'   	 => sprintf( __( 'Slide #%s Image', 'fbiz' ), $i ),
+					'section' 	 => 'fbiz_slider_section',
+					'settings'   => $slideImageId,
+				) 
+			)
+		);
+	}
+
+	/**
+	 * Add Footer Section
+	 */
+	$wp_customize->add_section(
+		'fbiz_footer_section',
+		array(
+			'title'       => __( 'Footer', 'fbiz' ),
+			'capability'  => 'edit_theme_options',
+			'description' => fbiz_get_customizer_sectoin_info(),
+		)
+	);
+	
+	// Add footer copyright text
+	$wp_customize->add_setting(
+		'fbiz_footer_copyright',
+		array(
+		    'default'           => '',
+		    'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fbiz_footer_copyright',
+        array(
+            'label'          => __( 'Copyright Text', 'fbiz' ),
+            'section'        => 'fbiz_footer_section',
+            'settings'       => 'fbiz_footer_copyright',
+            'type'           => 'text',
+            )
+        )
+	);
+}
+add_action('customize_register', 'fbiz_customize_register');
 
 ?>
