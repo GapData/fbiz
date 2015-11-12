@@ -15,7 +15,7 @@
 
  get_header(); ?>
 
-<?php fbiz_show_page_header_section(); ?>
+
 
 <div class="clear">
 </div><!-- .clear -->

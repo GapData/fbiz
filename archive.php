@@ -19,10 +19,20 @@
 
  get_header(); ?>
 
-<?php fbiz_show_page_header_section(); ?>
-
 <div id="main-content-wrapper">
 	<div id="main-content">
+		<?php
+			/**
+			 * we use get_the_archive_title() to get the title of the archive of 
+			 * a category (taxonomy), tag (term), author, custom post type, post format, date, etc.
+			 */
+			$title = get_the_archive_title();
+		?>
+	
+		<div id="info-title">
+			<?php echo $title; ?>
+		</div><!-- #info-title -->
+
 		<?php if ( have_posts() ) : ?>
 
 				<?php

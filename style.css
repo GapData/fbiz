@@ -1183,15 +1183,6 @@ img.wp-post-image {
 	margin:-5px 0 10px 13px;
 }
 
-#page-header {
-	background-image:url('img/pageheader.png');
-	background-repeat: repeat;
-	-webkit-box-shadow: inset 0 -1px 1px -1px rgba(0, 0, 0, 0.25);
-	-moz-box-shadow: inset 0 -1px 1px -1px rgba(0, 0, 0, 0.25);
-	box-shadow: 0 -1px 1px -1px rgba(0, 0, 0, 0.25) inset;
-	padding:20px 2% 20px 2%;
-}
-
 #page-header,
 #page-header h1 {
 	color:#272727;

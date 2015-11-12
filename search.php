@@ -11,7 +11,7 @@
 
  get_header(); ?>
 
-<?php fbiz_show_page_header_section(); ?>
+
 
 <div id="main-content-wrapper">
 

@@ -69,12 +69,12 @@ function fbiz_setup() {
 	add_theme_support( 'custom-header', array (
 					   'default-image'          => '',
 					   'random-default'         => false,
-					   'width'                  => 0,
-					   'height'                 => 0,
-					   'flex-height'            => false,
-					   'flex-width'             => false,
+					   'width'                  => 113,
+					   'height'                 => 40,
+					   'flex-height'            => true,
+					   'flex-width'             => true,
 					   'default-text-color'     => '',
-					   'header-text'            => true,
+					   'header-text'            => '',
 					   'uploads'                => true,
 					   'wp-head-callback'       => '',
 					   'admin-head-callback'    => '',
@@ -206,49 +206,6 @@ function fbiz_show_copyright_text() {
 
 		echo esc_html( $footerText ) . ' | ';		
 	}
-}
-
-/**
- * Displays the Page Header Section including Page Title and Breadcrumb
- */
-function fbiz_show_page_header_section() { 
-	global $paged, $page;
-
-	if ( is_single() || is_page() ) :
-        $title = single_post_title( '', false );
-
-	elseif ( is_home() ) :
-		if ( $paged >= 2 || $page >= 2 ) :
-			$title = sprintf( __( '%s - Page %s', 'fbiz' ), single_post_title( '', false ), max( $paged, $page ) );	
-		else :
-			$title = single_post_title( '', false );	
-		endif;
-		
-	elseif ( is_404() ) :
-		$title = __( 'Error 404: Not Found', 'fbiz' );
-		
-	else :
-	
-		/**
-		 * we use get_the_archive_title() to get the title of the archive of 
-		 * a category (taxonomy), tag (term), author, custom post type, post format, date, etc.
-		 */
-		$title = get_the_archive_title();
-		
-	endif;
-	
-	?>
-
-	<section id="page-header">
-		<div id="page-header-content">
-
-			<h1><?php echo $title; ?></h1>
-
-			<div class="clear">
-			</div>
-		</div>
-    </section>
-<?php
 }
 
 /**
