@@ -4,7 +4,6 @@
  *
  * Used for single, index, archive, and search contents.
  *
- * @package WordPress
  * @subpackage fbiz
  * @author tishonator
  * @since fBiz 1.0.0
@@ -14,15 +13,19 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<?php if ( is_single() ) :
+	<?php if ( is_single() ) : ?>
 
-			echo '<h1 class="entry-title">'.get_the_title().'</h1>';
+			<h1 class="entry-title">
+				<?php the_title(); ?>
+			</h1>
 
-		  else :
+	<?php else : ?>
 	
-			echo '<h1 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark" title="' . esc_attr( get_the_title() ) . '">' . get_the_title() . '</a></h1>';
+			<h1 class="entry-title">
+				<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+			</h1>
 	
-		  endif; ?>
+	<?php endif; ?>
 
 	<div class="before-content">
 
@@ -33,7 +36,7 @@
 		<?php if ( !is_single() && get_the_title() === '' ) : ?>
 
 				<span class="clock-icon">
-					<a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark">
+					<a href="<?php the_permalink(); ?>" rel="bookmark">
 						<time datetime="<?php the_time( 'Y-m-d' ); ?>"><?php the_time(get_option('date_format')); ?></time>
 					</a>
 				</span><!-- .clock-icon -->
@@ -103,7 +106,7 @@
 
 								<span class="tags-icon">
 										<?php _e('Tags:', 'fbiz'); ?>
-										<?php echo get_the_tag_list( '', ', ','' ); ?>
+										<?php the_tags(); ?>
 								</span><!-- .tags-icon -->
 
 					<?php endif; ?>

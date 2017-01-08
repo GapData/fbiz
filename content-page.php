@@ -2,7 +2,6 @@
 /**
  * The template used for displaying page content
  *
- * @package WordPress
  * @subpackage fBiz
  * @author tishonator
  * @since fBiz 1.0.0

@@ -9,7 +9,6 @@
  * new template file for each one. For example, tag.php (Tag archives),
  * category.php (Category archives), author.php (Author archives), etc.
  *
- * @package WordPress
  * @subpackage fBiz
  * @author tishonator
  * @link https://codex.wordpress.org/Template_Hierarchy
@@ -47,13 +46,12 @@
 					get_template_part( 'content', get_post_format() );
 
 				endwhile;
-				?>
-				<div class="navigation">
 
-					<?php echo paginate_links( array( 'prev_next' => '', ) ); ?>
+				the_posts_pagination( array(
+                    'prev_next' => '',
+                ) );
 
-				</div><!-- .navigation --> 
-		<?php else :
+			  else :
 
 				// If no content, include the "No posts found" template.
 				get_template_part( 'content', 'none' );

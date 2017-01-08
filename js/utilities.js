@@ -42,13 +42,16 @@ jQuery( document ).ready(function() {
 		}
 	});
 
-	jQuery("#navmain > div > ul li").mouseleave( function() {
+	jQuery("#navmain > div > ul li").mouseleave( function(event) {
+    event.preventDefault();
 		if (fbiz_IsLargeResolution()) {
 			jQuery(this).children("ul").stop(true, true).css('display', 'block').slideUp(300);
 		}
 	});
 	
-	jQuery("#navmain > div > ul li").mouseenter( function() {
+	jQuery("#navmain > div > ul li").mouseenter( function(event) {
+
+    event.preventDefault();
 		if (fbiz_IsLargeResolution()) {
 
 			var curMenuLi = jQuery(this);

@@ -1,4 +1,23 @@
-fCorpo 1.0.1, 2015-10-10
+fBiz 1.0.5, 2017-01-08
+------------------------
+- add full-width page template
+
+fBiz 1.0.4, 2016-11-18
+------------------------
+- add custom logo
+- add footer widget areas
+- bug fixes
+
+fBiz 1.0.3, 2016-07-10
+------------------------
+- update tags in style.css
+
+fBiz 1.0.2, 2016-02-13
+------------------------
+- FontAwesome update
+- bug fixes
+
+fBiz 1.0.1, 2015-10-10
 ------------------------
 - use customizer instead of admin options page
 

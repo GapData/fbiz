@@ -2,7 +2,6 @@
 /**
  * The sidebar containing the main widget area
  *
- * @package WordPress
  * @subpackage fBiz
  * @author tishonator
  * @since fBiz 1.0.0

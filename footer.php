@@ -4,7 +4,6 @@
  *
  * Contains the closing of the "body-content-wrapper" div and all content after.
  *
- * @package WordPress
  * @subpackage fBiz
  * @author tishonator
  * @since fBiz 1.0.0
@@ -15,6 +14,8 @@
 			<footer id="footer-main">
 			
 				<div id="footer-content-wrapper">
+
+					<?php get_sidebar( 'footer' ); ?>
 				
 					<div class="clear">
 					</div><!-- .clear -->

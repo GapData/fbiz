@@ -5,7 +5,6 @@
  * This is a traditional static HTML site model with a fixed front page and
  * content placed in Pages, rarely if ever using posts, categories, or tags. 
  *
- * @package WordPress
  * @subpackage fBiz
  * @author tishonator
  * @since fBiz 1.0.0

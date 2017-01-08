@@ -2,7 +2,6 @@
 /**
  * The template part for displaying a message that posts cannot be found
  *
- * @package WordPress
  * @subpackage fBiz
  * @author tishonator
  * @since fBiz 1.0.0

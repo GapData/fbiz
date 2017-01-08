@@ -2,7 +2,6 @@
 /**
  * The template for displaying all single posts and attachments
  *
- * @package WordPress
  * @subpackage fBiz
  * @author tishonator
  * @since fBiz 1.0.0
@@ -40,20 +39,12 @@
 							'link_after'  => '</span>',
 						) );
 	
-					?>
-					<div class="post-links">
-						
-						<div class="left">
-							<?php previous_post_link(); ?>
-						</div><!-- .left -->
-						
-						<div class="right">
-							<?php next_post_link(); ?>
-						</div><!-- .right -->
-							
-					</div><!-- .post-links -->
-	
-			<?php
+					the_post_navigation( array(
+
+                        'prev_text' => __( 'Prev Chapter: %title', 'fbiz' ),
+                        'next_text' => __( 'Next Chapter: %title', 'fbiz' ),
+                    ) );
+
 				endwhile; // end of have_posts()
 				?>
 

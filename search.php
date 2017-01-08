@@ -2,7 +2,6 @@
 /**
  * The template for displaying search results pages.
  *
- * @package WordPress
  * @subpackage fBiz
  * @author tishonator
  * @since fBiz 1.0.0
@@ -36,12 +35,11 @@
 						get_template_part( 'content', get_post_format() );
 	
 					endwhile; // end of have_posts()
-					?>
-					<div class="navigation">
-						<?php echo paginate_links( array( 'prev_next' => '', ) ); ?>
-					</div><!-- .navigation -->
-					
-		<?php else :
+						
+					the_posts_pagination( array(
+	                    'prev_next' => '',
+	                ) );
+               else :
 
 				// if no content is loaded, show the 'no found' template
 				get_template_part( 'content', 'none' );

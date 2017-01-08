@@ -4,7 +4,6 @@
  *
  * Displays all of the head element and everything up until the "body-content-wrapper" div.
  *
- * @package WordPress
  * @subpackage fBiz
  * @author tishonator
  * @since fBiz 1.0.0
@@ -26,7 +25,7 @@
 				<div id="header-content-wrapper">
 				
 					<div id="header-logo">
-						<?php fbiz_show_website_logo_image_or_title(); ?>
+						<?php fbiz_show_website_logo_image_and_title(); ?>
 					</div><!-- #header-logo -->
 					
 					<nav id="navmain">

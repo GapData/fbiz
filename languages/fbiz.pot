@@ -108,7 +108,7 @@ msgid "Edit"
 msgstr ""
 
 #: /home/tishonator/tishonator.com/themes/free_themes/fbiz/functions.php:49
-msgid "primary menu"
+msgid "Primary Menu"
 msgstr ""
 
 #: /home/tishonator/tishonator.com/themes/free_themes/fbiz/functions.php:182
@@ -306,4 +306,24 @@ msgstr ""
 
 #: /home/tishonator/tishonator.com/themes/free_themes/fbiz/inc/admin-options.php:280
 msgid "Upload an image"
+msgstr ""
+
+#: ../sidebar-footer.php:26
+msgid "Footer Col Widget 1"
+msgstr ""
+
+#: ../sidebar-footer.php:33
+msgid ""
+"This is first footer widget area. To customize it, please navigate to Admin "
+"Panel -> Appearance -> Widgets and add widgets to Footer Column #1."
+msgstr ""
+
+#: ../sidebar-footer.php:50
+msgid "Footer Col Widget 2"
+msgstr ""
+
+#: ../sidebar-footer.php:57
+msgid ""
+"This is second footer widget area. To customize it, please navigate to Admin "
+"Panel -> Appearance -> Widgets and add widgets to Footer Column #2."
 msgstr ""

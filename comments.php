@@ -5,7 +5,6 @@
  * The area of the page that contains both current comments
  * and the comment form.
  *
- * @package WordPress
  * @subpackage fBiz
  * @author tishonator
  * @since fBiz 1.0.0

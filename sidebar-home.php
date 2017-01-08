@@ -2,7 +2,6 @@
 /**
  * The sidebar containing the main home columns widget areas
  *
- * @package WordPress
  * @subpackage fBiz
  * @author tishonator
  * @since fBiz 1.0.0
